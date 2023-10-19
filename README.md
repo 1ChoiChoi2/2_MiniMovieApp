@@ -1,8 +1,8 @@
 # Mini Movie React Application
 
-API: https://www.omdbapi.com/?apikey=4715258e&
-API + search: https://www.omdbapi.com/?apikey=4715258e&s=[search]
-API + key: https://www.omdbapi.com/?apikey=4715258e&i=[key]
+* API: https://www.omdbapi.com/?apikey=4715258e&
+* API + search: https://www.omdbapi.com/?apikey=4715258e&s=[search]
+* API + key: https://www.omdbapi.com/?apikey=4715258e&i=[key]
 
 ## Movie Application Features
 - 
