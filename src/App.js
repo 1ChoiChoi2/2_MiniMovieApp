@@ -16,7 +16,7 @@ function App() {
     );
     setMovies(data.Search)
 
-    // console.log(movies || "Not found any movies");
+    // console.log(movies);
   };
 
   // Track the Movie Search Term

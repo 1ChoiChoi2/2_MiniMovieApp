@@ -80,6 +80,8 @@ const Movies = ({
               <p>Please change the filter or reset it below</p>
               <button>Reset Filter</button>
             </div>
+          ) : movies.length === 0 ? (
+            <></>
           ) : (
             <div className="movies__list">
               {movies &&
