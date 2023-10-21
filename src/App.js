@@ -3,18 +3,20 @@ import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
+import Movies from "./pages/Movies";
 
 function App() {
   const [searchMovieTerm, setSearchMovieTerm] = useState("");
+  const [movies, setMovies] = useState([]);
 
   // Fetch Movie based on search
   const fetchMovies = async (term) => {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=4715258e&s=${term}`
     );
-    const moviesData = data.Search;
-    
-    console.log(moviesData || "Not found any movies");
+    setMovies(data.Search)
+
+    // console.log(movies || "Not found any movies");
   };
 
   // Track the Movie Search Term
@@ -37,6 +39,17 @@ function App() {
             <Home
               searchMovie={searchMovie}
               handleMovieSearch={handleMovieSearch}
+            />
+          }
+        />
+        <Route
+          path="/movies"
+          element={
+            <Movies
+              searchMovie={searchMovie}
+              handleMovieSearch={handleMovieSearch}
+              searchMovieTerm={searchMovieTerm}
+              movies={movies}
             />
           }
         />

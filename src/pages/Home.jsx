@@ -22,7 +22,10 @@ const Home = ({ searchMovie, handleMovieSearch }) => {
                 type="text"
                 placeholder="Search by Movie's Title..."
               />
-              <button onClick={searchMovie} className="header__movie--search__icon">
+              <button
+                onClick={searchMovie}
+                className="header__movie--search__icon"
+              >
                 <FontAwesomeIcon icon="fa-magnifying-glass" />
               </button>
             </div>

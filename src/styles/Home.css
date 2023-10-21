@@ -24,19 +24,22 @@ header {
   text-align: center;
 }
 
-.header__movie--search {
+.header__movie--search,
+.movies__movie--search {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.header__movie--search input {
+.header__movie--search input,
+.movies__movie--search input {
   width: 280px;
   padding: 10px 30px;
   border-radius: 4px;
 }
 
-.header__movie--search__icon {
+.header__movie--search__icon,
+.movies__movie--search__icon {
   padding: 10px 20px;
   background-color: #7342d6;
   border-radius: 4px;
