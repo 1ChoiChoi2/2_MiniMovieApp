@@ -1,7 +1,7 @@
 import React from "react";
 import MovieLogo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-import '../styles/Nav.css'
+import "../styles/Nav.css";
 
 const Nav = () => {
   return (

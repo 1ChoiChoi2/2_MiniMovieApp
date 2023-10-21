@@ -54,7 +54,7 @@ function App() {
             />
           }
         />
-        <Route path="/movies/:id" element={ <MovieDetail /> }/>
+        <Route path="/movies/:id" element={<MovieDetail />} />
       </Routes>
     </div>
   );
