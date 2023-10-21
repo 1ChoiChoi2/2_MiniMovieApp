@@ -4,6 +4,7 @@ import axios from "axios";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
+import MovieDetail from "./pages/MovieDetail";
 
 function App() {
   const [searchMovieTerm, setSearchMovieTerm] = useState("");
@@ -14,7 +15,7 @@ function App() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=4715258e&s=${term}`
     );
-    setMovies(data.Search)
+    setMovies(data.Search);
 
     // console.log(movies);
   };
@@ -53,6 +54,7 @@ function App() {
             />
           }
         />
+        <Route path="/movies/:id" element={ <MovieDetail /> }/>
       </Routes>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Movie from "./Movie";
 import UndrawNotFound from "../assets/notFoundUndraw.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -74,7 +74,7 @@ const Movies = ({
           {!movies ? (
             <div className="movie__not-found--container">
               <figure className="movie__not-found--img">
-                <img src={UndrawNotFound} />
+                <img src={UndrawNotFound} alt=""/>
               </figure>
               <h4>Could not find any matches related to your search</h4>
               <p>Please change the filter or reset it below</p>

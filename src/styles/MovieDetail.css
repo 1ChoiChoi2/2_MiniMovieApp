@@ -1,0 +1,40 @@
+.movieDetail__back {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.movieDetail__back span {
+    font-weight: 500;
+}
+
+.movieDetail__movie {
+    padding-top: 56px;
+    display: grid;
+    grid-template-columns: 300px 400px;
+    gap: 20px;
+}
+
+.movieDetail__movie--detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.movieDetail__movie--detail span {
+    font-weight: 500;
+}
+
+.movieDetail__movie--detail p {
+    font-size: 15px;
+}
+
+.movieDetail__movie--information {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.movie__run-time {
+    font-weight: 500;
+}
