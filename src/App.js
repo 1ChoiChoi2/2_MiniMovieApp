@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Nav from "./components/Nav";
@@ -39,6 +39,8 @@ function App() {
     setSearchMovieTerm("");
   }
 
+  console.log(movies)
+
   return (
     <div className="App">
       <Nav />
@@ -49,6 +51,9 @@ function App() {
             <Home
               searchMovie={searchMovie}
               handleMovieSearch={handleMovieSearch}
+              loading={loading}
+              movies={movies}
+              setMovies={setMovies}
             />
           }
         />

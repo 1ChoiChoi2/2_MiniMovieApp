@@ -5,9 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTimes, faMagnifyingGlass, faCalendarDay, faFilm, faEarthAmerica, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faMagnifyingGlass, faCalendarDay, faFilm, faEarthAmerica, faArrowLeft, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faTimes, faMagnifyingGlass, faCalendarDay, faFilm, faEarthAmerica, faArrowLeft);
+library.add(faTimes, faMagnifyingGlass, faCalendarDay, faFilm, faEarthAmerica, faArrowLeft, faSpinner);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

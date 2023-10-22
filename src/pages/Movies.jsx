@@ -10,7 +10,7 @@ const Movies = ({
   searchMovieTerm,
   movies,
   loading,
-  resetFilterMovie
+  resetFilterMovie,
 }) => {
   // Uppercase first letter of each word
   const uppercaseFirstLetter = (str) => {

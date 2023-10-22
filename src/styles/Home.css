@@ -54,3 +54,17 @@ header {
   z-index: 50;
   max-height: 50vh;
 }
+
+.header__spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

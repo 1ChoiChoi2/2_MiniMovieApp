@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import UndrawMovie from "../assets/movieUndraw.jpg";
 import "../styles/Home.css";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Home = ({ searchMovie, handleMovieSearch }) => {
+const Home = ({ searchMovie, handleMovieSearch, loading, movies, setMovies }) => {
+  const navigate = useNavigate();
+  const location = useLocation()
+
+  const handleSearch = async () => {
+    await searchMovie();
+    setTimeout(() => {
+      navigate("/movies");
+    }, 1000);
+  };
+
+  //
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setMovies([])
+    }
+  }, [location, setMovies])
+
   return (
     <section id="home">
       <header>
@@ -18,7 +36,7 @@ const Home = ({ searchMovie, handleMovieSearch }) => {
             <div className="header__movie--search">
               <input
                 onChange={(e) => handleMovieSearch(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && searchMovie()}
+                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 type="text"
                 placeholder="Search by Movie's Title..."
               />
@@ -26,7 +44,19 @@ const Home = ({ searchMovie, handleMovieSearch }) => {
                 onClick={searchMovie}
                 className="header__movie--search__icon"
               >
-                <FontAwesomeIcon icon="fa-magnifying-glass" />
+                {!movies ? (
+                  <FontAwesomeIcon
+                    className="header__spinner"
+                    icon="fa-spinner"
+                  />
+                ) : movies.length === 0 ? (
+                  <FontAwesomeIcon icon="fa-magnifying-glass" />
+                ) : (
+                  <FontAwesomeIcon
+                    className="header__spinner"
+                    icon="fa-spinner"
+                  />
+                )}
               </button>
             </div>
           </div>
