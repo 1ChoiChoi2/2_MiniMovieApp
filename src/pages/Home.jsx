@@ -41,7 +41,7 @@ const Home = ({ searchMovie, handleMovieSearch, loading, movies, setMovies }) =>
                 placeholder="Search by Movie's Title..."
               />
               <button
-                onClick={searchMovie}
+                onClick={handleSearch}
                 className="header__movie--search__icon"
               >
                 {!movies ? (
