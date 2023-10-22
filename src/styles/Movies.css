@@ -45,7 +45,8 @@
   border-radius: 4px;
 }
 
-.movie__figure {
+.movie__figure,
+.movie__figure--skeleton {
   height: 300px;
 }
 
@@ -54,7 +55,8 @@
   border-top-left-radius: 4px;
 }
 
-.movie__details {
+.movie__details,
+.movie__detail--skeleton {
   padding: 10px;
 }
 
@@ -68,8 +70,7 @@
   font-size: 15px;
 }
 
-.movie__details--year__released,
-.movie__details--genre {
+.movie__details--year__released {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -98,4 +99,23 @@
   border: none;
   color: white;
   font-weight: 500;
+}
+
+/* Skeleton Loading State */
+.movie__figure--skeleton,
+.movie__detail--title__skeleton,
+.movie__detail--year-released__skeleton,
+.movie__detail--genre__skeleton {
+  background-color: lightgray;
+}
+
+.movie__detail--skeleton {
+  border: 1px solid whitesmoke;
+}
+
+.movie__detail--title__skeleton,
+.movie__detail--year-released__skeleton,
+.movie__detail--genre__skeleton {
+  margin: 5px 0;
+  padding: 6px 10px;
 }

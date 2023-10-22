@@ -9,13 +9,16 @@ import MovieDetail from "./pages/MovieDetail";
 function App() {
   const [searchMovieTerm, setSearchMovieTerm] = useState("");
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // Fetch Movie based on search
   const fetchMovies = async (term) => {
+    setLoading(false);
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=4715258e&s=${term}`
     );
     setMovies(data.Search);
+    setLoading(true);
 
     // console.log(movies);
   };
@@ -29,6 +32,12 @@ function App() {
   const searchMovie = () => {
     fetchMovies(searchMovieTerm);
   };
+
+  // Reset Filter
+  const resetFilterMovie = () => {
+    setMovies([]);
+    setSearchMovieTerm("");
+  }
 
   return (
     <div className="App">
@@ -51,6 +60,8 @@ function App() {
               handleMovieSearch={handleMovieSearch}
               searchMovieTerm={searchMovieTerm}
               movies={movies}
+              loading={loading}
+              resetFilterMovie={resetFilterMovie}
             />
           }
         />

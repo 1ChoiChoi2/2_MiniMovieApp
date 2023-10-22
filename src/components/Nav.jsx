@@ -17,7 +17,7 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav__list">
-            <Link to="#" className="nav__link">
+            <Link to="/movies" className="nav__link">
               Find your movie
             </Link>
           </li>

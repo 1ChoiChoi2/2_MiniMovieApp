@@ -9,6 +9,8 @@ const Movies = ({
   handleMovieSearch,
   searchMovieTerm,
   movies,
+  loading,
+  resetFilterMovie
 }) => {
   // Uppercase first letter of each word
   const uppercaseFirstLetter = (str) => {
@@ -38,6 +40,7 @@ const Movies = ({
                 onChange={(e) => handleMovieSearch(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && searchMovie()}
                 type="text"
+                value={searchMovieTerm}
                 placeholder="Search by Movie's Title..."
               />
               <button
@@ -78,16 +81,27 @@ const Movies = ({
               </figure>
               <h4>Could not find any matches related to your search</h4>
               <p>Please change the filter or reset it below</p>
-              <button>Reset Filter</button>
+              <button onClick={resetFilterMovie}>Reset Filter</button>
             </div>
           ) : movies.length === 0 ? (
             <></>
           ) : (
             <div className="movies__list">
-              {movies &&
-                movies.map((movie) => (
-                  <Movie key={movie.imdbID} movie={movie} />
-                ))}
+              {loading === false
+                ? new Array(9).fill(0).map((_, i) => (
+                    <div className="movie" key={i}>
+                      <figure className="movie__figure--skeleton"></figure>
+                      <div className="movie__detail--skeleton">
+                        <p className="movie__detail--title__skeleton"></p>
+                        <p className="movie__detail--year-released__skeleton"></p>
+                        <p className="movie__detail--genre__skeleton"></p>
+                      </div>
+                    </div>
+                  ))
+                : movies &&
+                  movies.map((movie) => (
+                    <Movie key={movie.imdbID} movie={movie} />
+                  ))}
             </div>
           )}
         </div>

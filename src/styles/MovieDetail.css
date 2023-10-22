@@ -15,7 +15,8 @@
   gap: 20px;
 }
 
-.movieDetail__movie--detail {
+.movieDetail__movie--detail,
+.movieDetail__movie--detail__skeleton {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -29,7 +30,8 @@
   font-size: 15px;
 }
 
-.movieDetail__movie--information {
+.movieDetail__movie--information,
+.movieDetail__movie--information__skeleton {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -37,4 +39,22 @@
 
 .movie__run-time {
   font-weight: 500;
+}
+
+/* Skeleton Loading */
+.movieDetail__movie--figure__skeleton,
+.movieDetail__movie--detail__skeleton p,
+.movieDetail__movie--detail__skeleton span {
+  background-color: lightgray;
+}
+
+.movieDetail__movie--figure__skeleton {
+  height: 460px;
+}
+
+.movieDetail__movie--detail__skeleton p,
+.movieDetail__movie--detail__skeleton span {
+  /* width: 100%; */
+  padding: 6px 10px;
+  margin: 5px 0;
 }
