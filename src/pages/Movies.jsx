@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Movie from "./Movie";
 import UndrawNotFound from "../assets/notFoundUndraw.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +12,20 @@ const Movies = ({
   loading,
   resetFilterMovie,
 }) => {
+  const [newstartYear, setNewStartYear] = useState(1800);
+  const startYear = 1800;
+  const endYear = 2023;
+
+  // Change start Year
+  const startYearPointValue = (singlePointValue) => {
+    const singleYearPointValue = Math.floor((endYear - startYear) / 100);
+    const updateStartYear = startYear + singleYearPointValue * singlePointValue  
+    setNewStartYear(updateStartYear);
+  }
+
+  // Change Movies Range based on Start - End Year
+
+
   // Uppercase first letter of each word
   const uppercaseFirstLetter = (str) => {
     if (str) {
@@ -27,7 +41,7 @@ const Movies = ({
     }
   };
 
-  // console.log(movies)
+  // console.log(movies.map(movie => movie.Year))
 
   return (
     <section id="movies">
@@ -59,18 +73,18 @@ const Movies = ({
               </span>
               <div className="movies__search--dual__range">
                 <h5>
-                  Year Production: <span className="purple">2000 to 2023</span>
+                  Year Production: <span className="purple">1800 to 2023</span>
                 </h5>
                 <input
                   type="range"
-                  className="movies__search--range-1"
+                  className="movies__search--range"
                   defaultValue={0}
+                  onChange={e => startYearPointValue(e.target.value)}
                 />
-                <input
-                  type="range"
-                  className="movies__search--range-2"
-                  defaultValue={100}
-                />
+                <div className="movies__search--start-end__range">
+                  <span className="starting__range">{newstartYear}</span>
+                  <span className="ending__range">{endYear}</span>
+                </div>
               </div>
             </div>
           </div>

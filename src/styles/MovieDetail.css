@@ -22,6 +22,11 @@
   gap: 20px;
 }
 
+.movieDetail__movie--title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .movieDetail__movie--detail span {
   font-weight: 500;
 }

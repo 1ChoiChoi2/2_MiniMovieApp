@@ -60,7 +60,7 @@ const MovieDetail = () => {
                     <img src={movie.Poster} alt="" />
                   </figure>
                   <div className="movieDetail__movie--detail">
-                    <p>{movie.Title}</p>
+                    <p className="movieDetail__movie--title purple">{movie.Title}</p>
                     <div className="movieDetail__movie--information">
                       <span className="purple">Released Date: </span>
                       <p>{movie.Released}</p>
