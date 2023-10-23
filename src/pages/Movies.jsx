@@ -19,12 +19,9 @@ const Movies = ({
   // Change start Year
   const startYearPointValue = (singlePointValue) => {
     const singleYearPointValue = Math.floor((endYear - startYear) / 100);
-    const updateStartYear = startYear + singleYearPointValue * singlePointValue  
+    const updateStartYear = startYear + singleYearPointValue * singlePointValue;
     setNewStartYear(updateStartYear);
-  }
-
-  // Change Movies Range based on Start - End Year
-
+  };
 
   // Uppercase first letter of each word
   const uppercaseFirstLetter = (str) => {
@@ -40,8 +37,6 @@ const Movies = ({
       return result;
     }
   };
-
-  // console.log(movies.map(movie => movie.Year))
 
   return (
     <section id="movies">
@@ -73,13 +68,14 @@ const Movies = ({
               </span>
               <div className="movies__search--dual__range">
                 <h5>
-                  Year Production: <span className="purple">1800 to 2023</span>
+                  Year Production:{" "}
+                  <span className="purple">{newstartYear} to 2023</span>
                 </h5>
                 <input
                   type="range"
                   className="movies__search--range"
                   defaultValue={0}
-                  onChange={e => startYearPointValue(e.target.value)}
+                  onChange={(e) => startYearPointValue(e.target.value)}
                 />
                 <div className="movies__search--start-end__range">
                   <span className="starting__range">{newstartYear}</span>
@@ -113,9 +109,16 @@ const Movies = ({
                     </div>
                   ))
                 : movies &&
-                  movies.map((movie) => (
-                    <Movie key={movie.imdbID} movie={movie} />
-                  ))}
+                  movies
+                    .map((movie) => {
+                      const yearInt = parseInt(movie.Year, 10);
+                      return {
+                        ...movie,
+                        Year: yearInt,
+                      };
+                    })
+                    .filter((movie) => movie.Year >= newstartYear)
+                    .map((movie) => <Movie key={movie.imdbID} movie={movie} />)}
             </div>
           )}
         </div>

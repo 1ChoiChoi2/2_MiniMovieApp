@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Nav from "./components/Nav";
@@ -39,7 +39,7 @@ function App() {
     setSearchMovieTerm("");
   }
 
-  console.log(movies)
+  // console.log(movies)
 
   return (
     <div className="App">
@@ -67,6 +67,7 @@ function App() {
               movies={movies}
               loading={loading}
               resetFilterMovie={resetFilterMovie}
+              setMovies={setMovies}
             />
           }
         />

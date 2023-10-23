@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import UndrawMovie from "../assets/movieUndraw.jpg";
 import "../styles/Home.css";
 import { useNavigate, useLocation } from "react-router-dom";
